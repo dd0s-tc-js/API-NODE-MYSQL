@@ -5,11 +5,14 @@ const router = express.Router();
 const app = express();
 
 app.set("port", process.env.PORT || 9000);
+
+const host = process.env.HOSTDB || 'localhost';
+const port = process.env.PORTDB || '3306';
 const dbOptions = {
-  host: "localhost",
-  port: 3306,
+  host: host,
+  port: port,
   user: "root",
-  password: "091100",
+  password: "123123",
   database: "api_supermarket",
 };
 

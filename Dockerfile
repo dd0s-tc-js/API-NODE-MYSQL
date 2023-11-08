@@ -6,6 +6,9 @@ COPY . .
 
 RUN npm install
 
+ENV HOSTDB=db
+ENV PORTDB=3306
+
 EXPOSE 9000
 
-CMD [ "npm","start" ]
+CMD [ "node","server.js" ]
