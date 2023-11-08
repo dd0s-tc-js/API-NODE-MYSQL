@@ -8,7 +8,7 @@ const statementDelete = "DELETE FROM productos as pr WHERE pr.id = ?;";
 module.exports = (router) => {
   router.use(bodyParser.urlencoded({ extended: false }));
   router.use(bodyParser.json());
-
+  //consulta
   router.get("/productos", (req, res) => {
     req.getConnection((err, conn) => {
       if (err) return res.send(err);
@@ -19,7 +19,7 @@ module.exports = (router) => {
       });
     });
   });
-
+  //Creacion
   router.post("/productos/new", (req, res) => {
     req.getConnection((err, conn) => {
       let request = [
@@ -37,7 +37,7 @@ module.exports = (router) => {
       });
     });
   });
-
+  //Actualizacion
   router.patch("/productos/update/categoria", (req, res) => {
     req.getConnection((err, conn) => {
       let request = [
@@ -52,7 +52,7 @@ module.exports = (router) => {
       });
     });
   });
-
+  //Eliminacion
   router.delete("/productos/delete", (req, res) => {
     req.getConnection((err, conn) => {
       let request = [

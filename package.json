@@ -4,9 +4,10 @@
   "description": "app api rest",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "startDev": "nodemon server.js"
   },
-  "author": "",
+  "author": "_dd0s.js",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
