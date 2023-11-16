@@ -1,15 +1,18 @@
-exports.success = (req, res, message = "OK") => {
-  res.status(200).send({
-    status: 200,
+exports.success = (res,body,message = "OK",status = 200) => {
+  res.status(status).send({
     message: message,
-    data: res,
+    data: body,
   });
 };
 
-exports.error = (req, res, message = "Error Interno") => {
-  res.status(500).send({
-    status: 500,
+exports.error = (res, message = "Error Interno",status = 500) => {
+  res.status(status).send({
     message: message,
-    data: res,
+  });
+};
+
+exports.badRequest = (res, message = "Faltan parametros obligatorios",status = 403) => {
+  res.status(status).send({
+    message: message,
   });
 };

@@ -5,12 +5,12 @@ const productsController = require("../../controllers/productsControllers");
 routers
   //consulta todos los productos
   .get("/", productsController.getV1AllProducts)
-  //consulta especifica
-  .get("/:productId", productsController.getV1OneProduct)
   //Creacion
   .post("/new", productsController.postV1CreateProduct)
   //Actualizacion de categoria
   .patch("/update/category",productsController.patchV1UpdateProductCategory)
+  //actualizacion del producto
+  .put("update",productsController.putV1CreateProduct)
   //Eliminacion
   .delete("/delete", productsController.deleteV1Product);
 

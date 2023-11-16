@@ -41,6 +41,16 @@ const genericQuery = (query) => {
   });
 };
 
+const genericQueryParams = (query, params) => {
+  return new Promise((resolve, reject) => {
+    conexion.query(query, params, (error, result) => {
+      if (error) return reject(error);
+      resolve(result);
+    });
+  });
+};
+
 module.exports = {
   genericQuery,
+  genericQueryParams,
 };
